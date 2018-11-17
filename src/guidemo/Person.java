@@ -1,6 +1,7 @@
 package guidemo;
 
 import java.time.LocalDate;
+import java.time.Period;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
@@ -35,6 +36,11 @@ public class Person {
 
     public LocalDate getBirthday() {
         return birthday;
+    }
+    
+    public int getAge()
+    {
+        return Period.between(birthday, LocalDate.now()).getYears();
     }
 
     public void setBirthday(LocalDate birthday) {
